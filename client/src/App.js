@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import CurrentDate from './CurrentDate';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <CurrentDate />
         <Calendar onChange={onChange} value={value} />
         <h1>{serverData}</h1>
       </header>
