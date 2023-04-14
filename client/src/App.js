@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
+
 
 function App() {
   const [serverData, setServerData] = useState("");
+  const [value, onChange] = useState(new Date());
 
   useEffect(() => {
     async function getServerData() {
@@ -21,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Calendar onChange={onChange} value={value} />
         <h1>{serverData}</h1>
       </header>
     </div>
