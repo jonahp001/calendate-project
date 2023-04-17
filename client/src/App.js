@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import CalendarComponent from './CalendarComponent.js';
 import CurrentDate from './CurrentDate';
+import Navbar from './Navbar';
+import CalendarIcon from './CalendarIcon';
+// import TwelveMonths from './TwelveMonths';
 
 
 function App() {
   const [serverData, setServerData] = useState("");
-  const [value, onChange] = useState(new Date());
 
   useEffect(() => {
     async function getServerData() {
@@ -24,11 +25,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <Navbar />
+      <div className="container">
         <CurrentDate />
-        <Calendar onChange={onChange} value={value} />
+        {/* <TwelveMonths /> */}
+        <CalendarComponent />
+        <CalendarIcon />
         <h1>{serverData}</h1>
-      </header>
+      </div>
     </div>
   );
 }

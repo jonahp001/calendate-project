@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+#year-changer {
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  color: #658BA0;
+  max-width: 215px;
+  margin: 1.5rem auto
+}
+
+.cursor-pointer {
+  cursor: pointer!important;
+}
+
+.cursor-pointer:active {
+  color:#305f78
+}
+
+p {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  color: #658BA0;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.current-month {
+  background-color: rgba(120, 225, 187, 0.7);
+}

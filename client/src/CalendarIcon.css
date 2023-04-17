@@ -1,0 +1,12 @@
+svg {
+  color: #658BA0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  width: 4rem;
+  height: 4rem;
+  cursor:pointer;
+}
+
+svg:active {
+  color: #316988;
+}
