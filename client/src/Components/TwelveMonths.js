@@ -2,8 +2,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCaretLeft, faCaretRight} from '@fortawesome/free-solid-svg-icons'
 import './TwelveMonths.css'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 const d = new Date();
 let month = months[d.getMonth()];
 let year = d.getFullYear();
@@ -28,9 +29,11 @@ export default function TwelveMonths() {
       let currentMonth = ''
       m === month && changeYear === year ? currentMonth = 'current-month' : currentMonth = '';
       return (
-        <div key={index} className='col-4 col-md-3 d-flex'>
-          <h3 className={`d-flex justify-content-center align-items-center shadow ${currentMonth}`}>{m}</h3>
-        </div>
+          <div key={index} className='col-4 col-md-3 d-flex'>
+            <Link to={changeYear + '%2c%20' + (index + 1)} className={`month-icons d-flex justify-content-center align-items-center shadow ${currentMonth}`}>
+              {m}
+            </Link>
+          </div>
       )
     })
     return monthRender
@@ -40,7 +43,7 @@ export default function TwelveMonths() {
     <>
       <div id='year-changer' className="d-flex justify-content-center align-items-center py-2 shadow">
         <FontAwesomeIcon onClick={handleClickLeft} className="cursor-pointer" icon={faCaretLeft} />
-        <p className='mx-5 mb-0'>{ changeYear }</p>
+        <p className='mx-4 mb-0'>{ changeYear }</p>
         <FontAwesomeIcon onClick={handleClickRight} className='cursor-pointer' icon={faCaretRight} />
       </div>
       <div className='row m-1'>

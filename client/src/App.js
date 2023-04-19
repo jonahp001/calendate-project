@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
+import {Routes, Route} from 'react-router-dom'
 import './App.css';
-import CalendarComponent from './CalendarComponent.js';
-import CurrentDate from './CurrentDate';
-import Navbar from './Navbar';
-import CalendarIcon from './CalendarIcon';
-// import TwelveMonths from './TwelveMonths';
+import CalendarComponent from './Components/CalendarComponent';
+import CurrentDate from './Components/CurrentDate';
+import Navbar from './Components/Navbar';
+import CalendarIcon from './Components/CalendarIcon';
+import TwelveMonths from './Components/TwelveMonths';
 
+import MonthView from './pages/MonthView';
 
 function App() {
   const [serverData, setServerData] = useState("");
@@ -24,15 +26,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Navbar />
-      <div className="container">
-        <CurrentDate />
-        {/* <TwelveMonths /> */}
-        <CalendarComponent />
-        <CalendarIcon />
-        <h1>{serverData}</h1>
-      </div>
+      <CurrentDate />
+      <Routes>
+        <Route path='/month' element={<MonthView />}/>
+        <Route path='/year'>
+          <Route index element={<TwelveMonths />} />
+          <Route path=':yearAndMonth' element={<MonthView />} />
+        </Route>
+      </Routes>
+      <h1>{serverData}</h1>
     </div>
   );
 }
