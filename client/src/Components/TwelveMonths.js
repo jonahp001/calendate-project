@@ -43,7 +43,7 @@ export default function TwelveMonths() {
     <>
       <div id='year-changer' className="d-flex justify-content-center align-items-center py-2 shadow">
         <FontAwesomeIcon onClick={handleClickLeft} className="cursor-pointer" icon={faCaretLeft} />
-        <p className='mx-4 mb-0'>{ changeYear }</p>
+        <p id="change-year-p" className='mx-4 mb-0 fst-italic fw-semibold'>{ changeYear }</p>
         <FontAwesomeIcon onClick={handleClickRight} className='cursor-pointer' icon={faCaretRight} />
       </div>
       <div className='row m-1'>

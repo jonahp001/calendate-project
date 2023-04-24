@@ -12,7 +12,7 @@ export default function CurrentDate() {
   return (
     <div id="current-date-section" className="justify-content-evenly mx-auto mt-4 shadow">
       <h2>Today's<br></br>Date:</h2>
-      <h2>{ day } <br></br>{ month }, { date } { year }</h2>
+      <h2>{ day } <br></br>{ month } { date }, { year }</h2>
     </div>
   )
 }

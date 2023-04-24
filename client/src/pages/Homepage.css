@@ -1,0 +1,12 @@
+.arrows {
+  font-size: 3rem;
+  color: white;
+}
+
+.arrow-left{
+  margin-right: 5rem;
+}
+
+.arrow-right {
+  margin-left: 5rem;
+}
