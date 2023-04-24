@@ -1,0 +1,23 @@
+.day-content {
+  color: #658BA0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+}
+
+h3 {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.text-height {
+  height: 9rem;
+}
+
+#view-the-day-button {
+  border: none;
+  background-color: #658BA0;
+  color: white;
+  border-radius: 15px;
+}

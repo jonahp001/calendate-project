@@ -1,0 +1,63 @@
+#table-div {
+  border-radius: 15px;
+  height: 20rem;
+  overflow: scroll;
+}
+
+#daily-note-div {
+  height: 12rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.table-properties {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  width: 21rem;
+}
+
+.table-header {
+  background-color: rgba(101, 139, 160, 0.7);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 3rem;
+}
+
+tbody tr {
+  color: black;
+  /* height: 2.5rem;
+  width:18rem;
+  text-overflow: ellipsis; */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.table-desc-div {
+  height: 2.5rem;
+  width: 14rem;
+}
+
+.event-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.event-div {
+  height: fit-content;
+  white-space:unset;
+  text-overflow: unset;
+}
+
+.time-slot {
+  width: 6rem;
+}
+
+.event-slot {
+  background-color: rgba(120, 225, 187, 0.7);
+}
+
+.daily-note-edit {
+  margin-left: 18rem;
+}
