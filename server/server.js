@@ -40,8 +40,31 @@ app.get('/api/entries/:userId', async (req, res) => {
     `;
     const params = [userId];
     const result = await db.query(sql, params);
-    const [entry] = result.rows;
+    const entry = result.rows;
     res.status(200).json(entry);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'an unexpected error occurred' });
+  }
+});
+
+app.post('/api/entries/:userId', async (req, res) => {
+  try {
+    const { newEventDescription, newStartTime, newEndTime, newNote, calendarDate } = req.body;
+    const userId = Number(req.params.userId);
+    if (!Number.isInteger(userId) || userId < 1) {
+      res.status(400).json({ error: 'userId must be a positive integer' });
+      return;
+    }
+    const sql = `
+      insert into "entries" ("eventDescription", "startTime", "endTime", "notes", "userId", "eventDate")
+        values ($1, $2, $3, $4, 1, $5)
+        returning *
+    `;
+    const params = [newEventDescription, newStartTime, newEndTime, newNote, calendarDate];
+    const result = await db.query(sql, params);
+    const [entry] = result.rows;
+    res.status(201).json(entry);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'an unexpected error occurred' });
