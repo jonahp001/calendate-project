@@ -9,6 +9,8 @@ import TwelveMonths from './Components/TwelveMonths';
 import Homepage from './pages/Homepage';
 import MonthView from './pages/MonthView';
 import DetailedDayView from './pages/DetailedDayView';
+import EditEventView from './pages/EditEventView';
+import EditNoteView from './pages/EditNoteView';
 
 function App() {
   // const [serverData, setServerData] = useState("");
@@ -37,7 +39,11 @@ function App() {
             <Route index element={<TwelveMonths />} />
             <Route path=':yearAndMonth'>
               <Route index element={<MonthView />} />
-              <Route path=':date' element={<DetailedDayView />} />
+              <Route path=':date'>
+                <Route index element={<DetailedDayView />} />
+                <Route path='editEvent' element={<EditEventView />}/>
+                <Route path='editNote' element={<EditNoteView />} />
+              </Route>
             </Route>
           </Route>
         </Route>

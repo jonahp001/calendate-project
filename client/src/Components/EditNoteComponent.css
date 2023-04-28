@@ -1,0 +1,21 @@
+#edit-note-div textarea {
+  width: 18rem;
+  height: 7rem;
+  resize: none;
+  font-size: 1rem;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  padding-left: 0.5rem;
+}
+
+#edit-note-div textarea:focus {
+  outline: 2px solid #74b9de
+}
+
+#edit-note-div input {
+  font-size: 1rem;
+  border: none;
+  background-color: #658BA0;
+  color: white;
+  border-radius: 5px;
+}

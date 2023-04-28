@@ -1,0 +1,48 @@
+#add-event {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 21rem;
+  border-radius: 15px;
+}
+
+#add-event h3 {
+  height: 3rem;
+  color: #658BA0;
+}
+
+#add-event textarea {
+  width: 19rem;
+  height: 7rem;
+  resize: none;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+#add-event textarea:focus {
+  outline: 2px solid #74b9de
+}
+
+#add-event label {
+  font-size: 0.85rem;
+}
+
+#add-event select {
+  height: 2rem;
+  width: 5.5rem;
+  font-size: 1rem;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+#add-event select:focus {
+  outline: 2px solid #74b9de
+}
+
+#add-event input {
+  font-size: 1rem;
+  border: none;
+  background-color: #658BA0;
+  color: white;
+  border-radius: 5px;
+}

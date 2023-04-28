@@ -10,3 +10,7 @@
 .calendar-icon:active {
   color: #316988;
 }
+
+.icon-width {
+  max-width: 4rem;
+}
