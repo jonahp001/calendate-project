@@ -82,8 +82,6 @@ export default function EditNoteView() {
     return <div>Error! {error.message}</div>;
   }
 
-  console.log(addNote)
-
   return (
     <>
       <DayScheduleComponent eventEntries={eventEntries} />

@@ -84,7 +84,7 @@ export default function IndividualDay(eventEntries) {
           eventSchedule = '';
           eventText = '';
         }
-        if ((hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
+        if (entriesArray[i].eventDate === calendarDate && (hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
           eventClassColor = ''
         }
       }

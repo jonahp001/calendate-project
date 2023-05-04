@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+// const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 const d = new Date();
 let year = d.getFullYear();
-let month = months[d.getMonth()];
+// let month = months[d.getMonth()];
 let numericalMonth = d.getMonth() + 1;
 let day = d.getDate();
 let dayOfTheWeek = weekday[d.getDay()];
-let currentDate = `${month} ${day}, ${year}`
+// let currentDate = `${month} ${day}, ${year}`
+
+const selectedDate = new Date(year, numericalMonth - 1, day).toString()
+const calendarDate = `${selectedDate.substring(4, 10)},${selectedDate.substring(10, 15)}`
 
 export default function HomeComponent() {
   const [eventEntries, setEventEntries] = useState([])
@@ -75,10 +78,10 @@ export default function HomeComponent() {
     let eventsArray = [];
     let eventOfDay = 'No events scheduled for the day!';
     for (let i = 0; i < eventEntries.length; i++) {
-      if (eventEntries[i].eventDate === currentDate && eventEntries[i].eventDescription === "") {
+      if (eventEntries[i].eventDate === calendarDate && eventEntries[i].eventDescription === "") {
         continue;
       }
-      if (eventEntries[i].eventDate === currentDate) {
+      if (eventEntries[i].eventDate === calendarDate) {
         eventOfDay = `${eventEntries[i].startTime}-${eventEntries[i].endTime}: ${eventEntries[i].eventDescription}`
         eventsArray.push(
           <p key={eventEntries[i].entryId} className='fs-6 mx-3 mb-1'>{eventOfDay}</p>
@@ -97,10 +100,10 @@ export default function HomeComponent() {
     let notesArray = [];
     let noteOfDay = 'No notes for the day!';
     for (let i = 0; i < eventEntries.length; i++) {
-      if (eventEntries[i].eventDate === currentDate && eventEntries[i].notes === "") {
+      if ((eventEntries[i].eventDate === calendarDate && eventEntries[i].notes === "") || (eventEntries[i].eventDate !== calendarDate || eventEntries[i].notes === undefined)) {
         continue;
       }
-      if (eventEntries[i].eventDate === currentDate) {
+      if (eventEntries[i].eventDate === calendarDate) {
         noteOfDay = eventEntries[i].notes
         notesArray.push(
           <p key={eventEntries[i].entryId} className='fs-6 mx-3 mb-1'>{noteOfDay}</p>

@@ -20,7 +20,7 @@ export default function IndividualNote(eventEntriesNote) {
     let entriesArray = eventEntriesNote.eventEntriesNote
     for (let i = 0; i < entriesArray.length; i++) {
       if (entriesArray[i].notes === '') {
-        break;
+        continue;
       }
       if (entriesArray[i].eventDate !== calendarDate || entriesArray[i].notes === undefined) {
         setNoteOfDay('No notes for the day!');
