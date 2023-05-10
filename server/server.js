@@ -71,6 +71,40 @@ app.post('/api/entries/:userId', async (req, res) => {
   }
 });
 
+app.patch('/api/entries/:userId/:entryId', async (req, res) => {
+  try {
+    const userId = Number(req.params.userId);
+    const entryId = Number(req.params.entryId);
+    if (!Number.isInteger(userId) || userId < 1) {
+      res.status(400).json({ error: 'userId must be a positive integer' });
+      return;
+    }
+    // const updatedNote = req.body.newNote;
+    const { newEventDescription, newStartTime, newEndTime, newNote, calendarDate } = req.body;
+    const sql = `
+      update "entries"
+        set "eventDescription" = $1,
+            "startTime" = $2,
+            "endTime" = $3,
+            "notes" = $4,
+            "eventDate" = $5
+      where "entryId" = $6
+      returning *
+    `;
+    const params = [newEventDescription, newStartTime, newEndTime, newNote, calendarDate, entryId];
+    const result = await db.query(sql, params);
+    const [entry] = result.rows;
+    if (!entry) {
+      res.status(404).json({ error: `cannot find entry with entryId ${entryId}` });
+      return;
+    }
+    res.json(entry);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'an unexpected error occurred' });
+  }
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

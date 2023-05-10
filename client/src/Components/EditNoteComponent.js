@@ -3,7 +3,7 @@ import './IndividualDay.css'
 import './EditNoteComponent.css'
 import { useState, useEffect } from "react";
 
-export default function EditNoteComponent( {eventEntriesNote, onSubmit}) {
+export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote}) {
   // const [eventDate, setEventDate] = useState('')
   const [noteOfDay, setNoteOfDay] = useState('')
   const [newEventDescription, setNewEventDescription] = useState('')
@@ -21,7 +21,7 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit}) {
   const selectedDate = new Date(yearNumber, monthNumber - 1, dateNumber).toString()
   const calendarDate = `${selectedDate.substring(4, 10)},${selectedDate.substring(10, 15)}`
 
-  function handleSubmit(event) {
+  function handleAdd() {
     setNewEventDescription('');
     setNewStartTime('');
     setNewEndTime('');
@@ -33,6 +33,30 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit}) {
       calendarDate,
     }
     onSubmit(addNewEvent);
+  }
+
+  function handleChange() {
+    setNewEventDescription('');
+    setNewStartTime('');
+    setNewEndTime('');
+    const addNewEvent = {
+      newEventDescription,
+      newStartTime,
+      newEndTime,
+      newNote,
+      calendarDate,
+    }
+    editNote(addNewEvent);
+  }
+
+  function handleSubmit() {
+    for (let i = 0; i < eventEntriesNote.length; i++) {
+      if (eventEntriesNote[i].notes !== '' && eventEntriesNote[i].eventDate === calendarDate) {
+        handleChange();
+        return
+      }
+    }
+    handleAdd();
   }
 
   useEffect(() => {
@@ -50,6 +74,18 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit}) {
     }
 
   }, [calendarDate, eventEntriesNote])
+
+  function NoteFormButton() {
+    let buttonName = 'Add Note'
+    for (let i = 0; i < eventEntriesNote.length; i++) {
+      if (eventEntriesNote[i].eventDate === calendarDate) {
+        buttonName = 'Update Note'
+      }
+    }
+    return (
+      <input className='py-1 mb-3' type="submit" value={buttonName}></input>
+    )
+  }
 
   return (
     <div id="edit-note-div" className="table-properties mb-4 mx-auto">
@@ -72,7 +108,8 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit}) {
       </div>
       <form onSubmit={handleSubmit} className='d-flex flex-column align-items-center justify-content-center'>
         <textarea onChange={(e) => setNewNote(e.target.value)} className="my-4" placeholder={noteOfDay}></textarea>
-        <input className='py-1 mb-3' type="submit" value="Add Note"></input>
+        {/* <input className='py-1 mb-3' type="submit" value="Add Note"></input> */}
+        <NoteFormButton />
       </form>
     </div>
   )

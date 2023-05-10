@@ -45,7 +45,7 @@ export default function IndividualNote(eventEntriesNote) {
         </div>
       </div>
       <ul className="text-black mt-1">
-        <li>{noteOfDay}</li>
+        <li className="pe-3">{noteOfDay}</li>
       </ul>
     </div>
   )
