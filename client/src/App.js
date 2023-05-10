@@ -1,10 +1,7 @@
-// import { useEffect, useState } from 'react';
 import {Routes, Route} from 'react-router-dom'
 import './App.css';
-// import CalendarComponent from './Components/CalendarComponent';
 import CurrentDate from './Components/CurrentDate';
 import Navbar from './Components/Navbar';
-// import CalendarIcon from './Components/CalendarIcon';
 import TwelveMonths from './Components/TwelveMonths';
 import Homepage from './pages/Homepage';
 import MonthView from './pages/MonthView';
@@ -13,21 +10,6 @@ import EditEventView from './pages/EditEventView';
 import EditNoteView from './pages/EditNoteView';
 
 function App() {
-  // const [serverData, setServerData] = useState("");
-
-  // useEffect(() => {
-  //   async function getServerData() {
-  //     const resp = await fetch('/api/hello');
-  //     const data = await resp.json();
-
-  //     console.log('Data from server:', data);
-
-  //     setServerData(data.message);
-  //   }
-
-  //   getServerData();
-  // }, []);
-
   return (
     <div className='App'>
       <Navbar />

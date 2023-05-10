@@ -1,8 +1,6 @@
 import DayScheduleComponent from "../Components/DayScheduleComponent";
 import EditNoteComponent from "../Components/EditNoteComponent";
 import CalendarIcon from "../Components/CalendarIcon";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 

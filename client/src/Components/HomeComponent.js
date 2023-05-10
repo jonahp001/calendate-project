@@ -3,59 +3,18 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-// const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 const d = new Date();
 let year = d.getFullYear();
-// let month = months[d.getMonth()];
 let numericalMonth = d.getMonth() + 1;
 let day = d.getDate();
 let dayOfTheWeek = weekday[d.getDay()];
-// let currentDate = `${month} ${day}, ${year}`
 
 const selectedDate = new Date(year, numericalMonth - 1, day).toString()
 const calendarDate = `${selectedDate.substring(4, 10)},${selectedDate.substring(10, 15)}`
 
 export default function HomeComponent() {
   const [eventEntries, setEventEntries] = useState([])
-
-  // const [eventOfDay, setEventOfDay] = useState('No events scheduled for the day!')
-  // const [noteOfDay, setNoteOfDay] = useState('No notes for the day!')
-  // const [startTime, setStartTime] = useState('')
-  // const [endTime, setEndTime] = useState('')
-
-  // useEffect(() => {
-  //   async function fetchEvent() {
-  //     try {
-  //       const res = await fetch(('/api/entries/1'), { method: 'GET', mode: 'no-cors' })
-  //       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-  //       const getEntry = await res.json()
-  //       const getEvent = getEntry.eventDescription
-  //       const getNote = getEntry.notes
-  //       const getStart = getEntry.startTime
-  //       const getEnd = getEntry.endTime
-  //       if (getEvent === '' || getEvent === undefined) {
-  //         setEventOfDay(eventOfDay)
-  //       } else if (getNote === '' || getNote === undefined) {
-  //         setNoteOfDay(noteOfDay)
-  //       } else if (getStart === '' || getStart === undefined) {
-  //         setStartTime(startTime)
-  //       } else if (getEnd === '' || getEnd === undefined) {
-  //         setEndTime(endTime)
-  //       }
-  //       setEventOfDay(getEvent)
-  //       setNoteOfDay(getNote)
-  //       setStartTime(getStart)
-  //       setEndTime(getEnd)
-  //     }
-  //     catch (err) {
-  //       console.error(err)
-  //     }
-  //   }
-
-  //   fetchEvent();
-
-  // }, [eventOfDay, noteOfDay, startTime, endTime])
 
   useEffect(() => {
     async function fetchEvent() {

@@ -79,7 +79,6 @@ app.patch('/api/entries/:userId/:entryId', async (req, res) => {
       res.status(400).json({ error: 'userId must be a positive integer' });
       return;
     }
-    // const updatedNote = req.body.newNote;
     const { newEventDescription, newStartTime, newEndTime, newNote, calendarDate } = req.body;
     const sql = `
       update "entries"

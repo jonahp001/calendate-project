@@ -24,9 +24,6 @@
 
 tbody tr {
   color: black;
-  /* height: 2.5rem;
-  width:18rem;
-  text-overflow: ellipsis; */
 }
 
 tbody tr:nth-child(odd) {

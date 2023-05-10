@@ -3,7 +3,6 @@ import './IndividualDay.css'
 import { useState, useEffect } from "react";
 
 export default function IndividualNote(eventEntriesNote) {
-  // const [eventDate, setEventDate] = useState('')
   const [noteOfDay, setNoteOfDay] = useState('')
 
   const { date, yearAndMonth } = useParams();

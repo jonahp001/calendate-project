@@ -38,23 +38,6 @@ export default function IndividualDay(eventEntries) {
     day = 'Saturday'
   }
 
-  // useEffect(() => {
-  //   async function fetchEvent() {
-  //     try {
-  //       const res = await fetch(('/api/entries/1'), { method: 'GET', mode: 'no-cors' })
-  //       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-  //       const getEntries = await res.json()
-  //       setEventEntries(getEntries);
-  //     }
-  //     catch (err) {
-  //       console.error(err)
-  //     }
-  //   }
-
-  //   fetchEvent();
-
-  // }, [])
-
   function handleDivEventClick() {
     if (eventDiv === '') {
       setEventDiv('event-div')

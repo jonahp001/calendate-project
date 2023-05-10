@@ -4,7 +4,6 @@ import './EditNoteComponent.css'
 import { useState, useEffect } from "react";
 
 export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote}) {
-  // const [eventDate, setEventDate] = useState('')
   const [noteOfDay, setNoteOfDay] = useState('')
   const [newEventDescription, setNewEventDescription] = useState('')
   const [newStartTime, setNewStartTime] = useState('')
