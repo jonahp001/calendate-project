@@ -175,3 +175,31 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+@media (min-width:768px) {
+  .react-calendar {
+    width: 500px
+  }
+  .react-calendar__month-view__weekdays {
+    margin: auto 1rem;
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+    margin: auto 0.2rem;
+    max-width: 3.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .react-calendar__month-view__weekdays__weekday abbr {
+    min-width: 2rem;
+  }
+  .react-calendar__month-view__days {
+    margin: 0.5rem 1rem 1rem;
+  }
+  .react-calendar__tile {
+    flex-basis: calc(100%/7);
+    min-width: 60px;
+    margin: 0.35rem 0.2rem!important;
+  }
+}

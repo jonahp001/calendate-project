@@ -25,7 +25,7 @@ export default function MonthView() {
   return (
     <>
       <Calendar onClickDay={handleClick} defaultValue={(new Date(fullYearAndMonth))} className="mx-auto shadow" calendarType='US' minDetail="month" next2Label={null} prev2Label={null} />
-      <Link to='/year' className='d-flex justify-content-center my-3'>
+      <Link to='/year' className='d-flex justify-content-center pb-3'>
         <CalendarIcon />
       </Link>
     </>

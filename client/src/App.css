@@ -8,3 +8,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+@media (min-width:768px) {
+  .App {
+    background-image: url("./images/landscape-v720-toon-12-abstractbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}

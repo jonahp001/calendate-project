@@ -78,19 +78,25 @@ export default function HomeComponent() {
   }
 
   return (
-    <div className='day-content shadow mx-4 text-center mt-4 mb-4'>
-      <h3 className='py-2'>{dayOfTheWeek} {`${numericalMonth}/${day}/${year}`}</h3>
-      <div className='text-height my-4'>
-        <h4 className='fw-bold'>Events:</h4>
-        <HomepageEvents />
+    <div className='container'>
+      <div className='day-content shadow text-center mx-2 mx-sm-4 my-4 px-0'>
+        <div className='justify-content-center'>
+          <h3 className='py-2'>{dayOfTheWeek} {`${numericalMonth}/${day}/${year}`}</h3>
+          <div className='row'>
+            <div className='col-sm text-height my-4 px-0 mx-2'>
+              <h4 className='fw-bold'>Events:</h4>
+              <HomepageEvents />
+            </div>
+            <div className='col-sm text-height my-4 px-0 mx-2'>
+              <h4 className='fst-italic fw-bold'>Daily Note:</h4>
+              <HomepageNotes />
+            </div>
+          </div>
+        </div>
+        <Link to={`year/${year}%2c%20${numericalMonth}/${day}`}>
+          <button id='view-the-day-button' className='mb-5 py-3 px-3 fw-bold shadow' type='button' >View The Day</button>
+        </Link>
       </div>
-      <div className='text-height mb-4'>
-        <h4 className='fst-italic fw-bold'>Daily Note:</h4>
-        <HomepageNotes />
-      </div>
-      <Link to={`year/${year}%2c%20${numericalMonth}/${day}`}>
-        <button id='view-the-day-button' className='mb-5 py-3 px-3 fw-bold shadow' type='button' >View The Day</button>
-      </Link>
     </div>
   )
 }

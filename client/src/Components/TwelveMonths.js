@@ -46,7 +46,7 @@ export default function TwelveMonths() {
         <p id="change-year-p" className='mx-4 mb-0 fst-italic fw-semibold'>{ changeYear }</p>
         <FontAwesomeIcon onClick={handleClickRight} className='cursor-pointer' icon={faCaretRight} />
       </div>
-      <div className='row mx-2 pb-3'>
+      <div className='row mx-2 pb-3 mx-md-auto months'>
         <MonthMaker />
       </div>
     </>

@@ -54,3 +54,7 @@
   background-color: #4a84a6;
   color: rgba(255, 255, 255, 0.85);
 }
+
+.months {
+  max-width: 800px;
+}
