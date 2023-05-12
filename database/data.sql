@@ -12,7 +12,7 @@
 
 insert into "users" ("firstName", "lastName", "userName", "hashedPassword", "email")
   VALUES
-    ('jonah', 'park', 'jonahp', 'qwerty', 'blah@ajha.com');
+    ('jonah', 'park', 'jonahp', 'qwerty', 'jonah@park.com');
 
 insert into "entries" ("eventDescription", "startTime", "endTime", "notes", "eventDate", "userId")
   VALUES
