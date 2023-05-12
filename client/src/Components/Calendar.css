@@ -55,6 +55,10 @@
   border-top-right-radius: 15px;
 }
 
+.react-calendar__navigation__arrow {
+  transition: background-color 0.3s ease;
+}
+
 .react-calendar__navigation__arrow:hover {
   background-color: rgb(100, 158, 189);
 }
@@ -73,11 +77,6 @@
 .react-calendar__navigation button:disabled {
   color: white;
 }
-
-/* .react-calendar__navigation button:enabled:hover,
-.react-calendar__navigation button:enabled:focus {
-  background-color: rgba(101, 139, 160, 0.7);
-} */
 
 .react-calendar__month-view__weekdays {
   display: flex;
@@ -116,12 +115,6 @@
   font-weight: bold;
 }
 
-/* .react-calendar__year-view .react-calendar__tile,
-.react-calendar__decade-view .react-calendar__tile,
-.react-calendar__century-view .react-calendar__tile {
-  padding: 2em 0.5em;
-} */
-
 .react-calendar__month-view__days {
   align-items: center;
   justify-content: center;
@@ -129,6 +122,7 @@
 }
 
 .react-calendar__tile {
+  transition: background-color 0.3s ease;
   font-weight: 500;
   color: #658BA0;
   max-width: 2.75rem;
@@ -161,7 +155,8 @@
 
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-  background-color: rgb(185, 223, 243);
+  background-color: #75b0d3;
+  color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
 }
 
@@ -183,16 +178,34 @@
   background: #a9d4ff;
 }
 
-/* .react-calendar__tile--active {
-  background-color: rgb(101, 139, 160);
-  color: white;
-} */
-
-/* .react-calendar__tile--active:enabled:hover,
-.react-calendar__tile--active:enabled:focus {
-  background-color: rgb(101, 139, 160);
-} */
-
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
+}
+
+@media (min-width:768px) {
+  .react-calendar {
+    width: 500px
+  }
+  .react-calendar__month-view__weekdays {
+    margin: auto 1rem;
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+    margin: auto 0.2rem;
+    max-width: 3.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .react-calendar__month-view__weekdays__weekday abbr {
+    min-width: 2rem;
+  }
+  .react-calendar__month-view__days {
+    margin: 0.5rem 1rem 1rem;
+  }
+  .react-calendar__tile {
+    flex-basis: calc(100%/7);
+    min-width: 60px;
+    margin: 0.35rem 0.2rem!important;
+  }
 }

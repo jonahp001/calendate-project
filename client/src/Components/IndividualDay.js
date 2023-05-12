@@ -38,23 +38,6 @@ export default function IndividualDay(eventEntries) {
     day = 'Saturday'
   }
 
-  // useEffect(() => {
-  //   async function fetchEvent() {
-  //     try {
-  //       const res = await fetch(('/api/entries/1'), { method: 'GET', mode: 'no-cors' })
-  //       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-  //       const getEntries = await res.json()
-  //       setEventEntries(getEntries);
-  //     }
-  //     catch (err) {
-  //       console.error(err)
-  //     }
-  //   }
-
-  //   fetchEvent();
-
-  // }, [])
-
   function handleDivEventClick() {
     if (eventDiv === '') {
       setEventDiv('event-div')
@@ -84,7 +67,7 @@ export default function IndividualDay(eventEntries) {
           eventSchedule = '';
           eventText = '';
         }
-        if ((hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
+        if (entriesArray[i].eventDate === calendarDate && (hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
           eventClassColor = ''
         }
       }
@@ -104,12 +87,12 @@ export default function IndividualDay(eventEntries) {
 
   return (
     <>
-      <div className="d-flex justify-content-center my-4">
+      <div className="d-flex justify-content-center my-3">
         <div id="table-div" className="mx-auto d-inline-block">
           <table className="table-properties mx-auto">
             <thead className="sticky-top">
               <tr>
-                <th colSpan="2" className="table-header text-center fs-2 fw-normal position-relative">
+                <th colSpan="2" className="table-header text-center fw-normal position-relative">
                   {`${day} ${monthNumber}/${dateNumber}/${yearNumber}`}
                   <div className="d-inline ms-2 position-absolute cursor-pointer">
                     <Link className='text-decoration-none float-right link-light' to='editEvent'>

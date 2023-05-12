@@ -15,6 +15,10 @@
   width: 21rem;
 }
 
+.table-properties li {
+  font-size: 1rem;
+}
+
 .table-header {
   background-color: rgba(101, 139, 160, 0.7);
   border-top-left-radius: 15px;
@@ -22,11 +26,20 @@
   height: 3rem;
 }
 
+.table-header svg {
+  transition: color 0.3s ease;
+}
+
+.table-header svg:hover {
+  color: #1276ac;
+}
+
+thead th {
+  font-size: 1.5rem;
+}
+
 tbody tr {
   color: black;
-  /* height: 2.5rem;
-  width:18rem;
-  text-overflow: ellipsis; */
 }
 
 tbody tr:nth-child(odd) {
@@ -60,4 +73,8 @@ tbody tr:nth-child(odd) {
 
 .daily-note-edit {
   margin-left: 18rem;
+}
+
+.container {
+  max-width: 768px;
 }

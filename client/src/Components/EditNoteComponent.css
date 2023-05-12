@@ -19,3 +19,11 @@
   color: white;
   border-radius: 5px;
 }
+
+#edit-note-div input {
+  transition: background-color 0.3s ease;
+}
+
+#edit-note-div input:hover {
+  background-color: rgb(100, 158, 189);
+}

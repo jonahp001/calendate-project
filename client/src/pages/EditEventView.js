@@ -49,12 +49,20 @@ export default function EditEventView() {
 
   return (
     <>
-      <EditEventComponent eventEntries={eventEntries} />
-      <AddEvent eventEntries2={eventEntries} onSubmit={addEventAndTimes} />
-      <div className='pb-4'>
-        <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
-          <CalendarIcon />
-        </Link>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <EditEventComponent eventEntries={eventEntries} />
+          </div>
+          <div className="col">
+            <AddEvent eventEntries2={eventEntries} onSubmit={addEventAndTimes} />
+          </div>
+          <div className='pb-4'>
+            <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
+              <CalendarIcon />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

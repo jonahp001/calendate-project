@@ -3,7 +3,6 @@ import './IndividualDay.css'
 import { useState, useEffect } from "react";
 
 export default function IndividualNote(eventEntriesNote) {
-  // const [eventDate, setEventDate] = useState('')
   const [noteOfDay, setNoteOfDay] = useState('')
 
   const { date, yearAndMonth } = useParams();
@@ -20,7 +19,7 @@ export default function IndividualNote(eventEntriesNote) {
     let entriesArray = eventEntriesNote.eventEntriesNote
     for (let i = 0; i < entriesArray.length; i++) {
       if (entriesArray[i].notes === '') {
-        break;
+        continue;
       }
       if (entriesArray[i].eventDate !== calendarDate || entriesArray[i].notes === undefined) {
         setNoteOfDay('No notes for the day!');
@@ -33,7 +32,7 @@ export default function IndividualNote(eventEntriesNote) {
   }, [calendarDate, eventEntriesNote])
 
   return (
-    <div id="daily-note-div" className="table-properties mb-4 mx-auto">
+    <div id="daily-note-div" className="table-properties my-3 mx-auto">
       <div className="table-header d-flex align-items-center justify-content-center fst-italic position-relative">
         <h4 className="mb-0">Daily Note:</h4>
         <div className="d-inline position-absolute daily-note-edit cursor-pointer link-light">
@@ -45,7 +44,7 @@ export default function IndividualNote(eventEntriesNote) {
         </div>
       </div>
       <ul className="text-black mt-1">
-        <li>{noteOfDay}</li>
+        <li className="pe-3">{noteOfDay}</li>
       </ul>
     </div>
   )

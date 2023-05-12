@@ -65,7 +65,7 @@ export default function EditEventComponent(eventEntries) {
           eventSchedule = '';
           eventText = '';
         }
-        if ((hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
+        if (entriesArray[i].eventDate === calendarDate && (hours.indexOf(entriesArray[i].endTime)) === hours.indexOf(timeSlot)) {
           eventClassColor = ''
         }
       }
@@ -86,12 +86,12 @@ export default function EditEventComponent(eventEntries) {
 
   return (
     <>
-      <div className="d-flex justify-content-center my-4">
+      <div className="d-flex justify-content-center my-3">
         <div id="table-div" className="mx-auto d-inline-block">
           <table className="table-properties mx-auto">
             <thead className="sticky-top">
               <tr>
-                <th colSpan="2" className="table-header text-center fs-2 fw-normal position-relative">
+                <th colSpan="2" className="table-header text-center fw-normal position-relative">
                   <div className="position-absolute cursor-pointer">
                     <Link className='ms-1 text-decoration-none link-light' to='../'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-arrow-left-short" viewBox="0 0 16 16">
@@ -100,13 +100,6 @@ export default function EditEventComponent(eventEntries) {
                     </Link>
                   </div>
                   {`${day} ${monthNumber}/${dateNumber}/${yearNumber}`}
-                  <div className="d-inline ms-2 position-absolute cursor-pointer">
-                    <Link className='text-decoration-none float-right link-light' to='eventEdit'>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                      </svg>
-                    </Link>
-                  </div>
                 </th>
               </tr>
             </thead>
