@@ -13,10 +13,15 @@
 
 .cursor-pointer {
   cursor: pointer!important;
+  transition: color 0.3s ease;
+}
+
+.cursor-pointer:hover {
+  color: #2ea2e1
 }
 
 .cursor-pointer:active {
-  color:#305f78
+  color:#1b6a95
 }
 
 #change-year-p {
