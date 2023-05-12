@@ -86,12 +86,12 @@ export default function DayScheduleComponent(eventEntries) {
 
   return (
     <>
-      <div className="d-flex justify-content-center my-4">
+      <div className="d-flex justify-content-center my-3">
         <div id="table-div" className="mx-auto d-inline-block">
           <table className="table-properties mx-auto">
             <thead className="sticky-top">
               <tr>
-                <th colSpan="2" className="table-header text-center fs-2 fw-normal position-relative">
+                <th colSpan="2" className="table-header text-center fw-normal position-relative">
                   {`${day} ${monthNumber}/${dateNumber}/${yearNumber}`}
                 </th>
               </tr>

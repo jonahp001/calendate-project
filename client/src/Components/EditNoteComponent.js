@@ -87,7 +87,7 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote
   }
 
   return (
-    <div id="edit-note-div" className="table-properties mb-4 mx-auto">
+    <div id="edit-note-div" className="table-properties my-3 mx-auto">
       <div className="table-header d-flex align-items-center justify-content-center fst-italic position-relative">
         <div className="cursor-pointer">
           <Link className='text-decoration-none link-light' to='../'>
@@ -98,16 +98,10 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote
         </div>
         <h4 className="mb-0 mx-5">Daily Note:</h4>
         <div className="ms-5 cursor-pointer">
-          {/* <Link className='text-decoration-none link-light' to='eventEdit'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-            </svg>
-          </Link> */}
         </div>
       </div>
       <form onSubmit={handleSubmit} className='d-flex flex-column align-items-center justify-content-center'>
         <textarea onChange={(e) => setNewNote(e.target.value)} className="my-4" placeholder={noteOfDay}></textarea>
-        {/* <input className='py-1 mb-3' type="submit" value="Add Note"></input> */}
         <NoteFormButton />
       </form>
     </div>

@@ -55,6 +55,10 @@
   border-top-right-radius: 15px;
 }
 
+.react-calendar__navigation__arrow {
+  transition: background-color 0.3s ease;
+}
+
 .react-calendar__navigation__arrow:hover {
   background-color: rgb(100, 158, 189);
 }
@@ -118,6 +122,7 @@
 }
 
 .react-calendar__tile {
+  transition: background-color 0.3s ease;
   font-weight: 500;
   color: #658BA0;
   max-width: 2.75rem;
@@ -150,7 +155,8 @@
 
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-  background-color: rgb(185, 223, 243);
+  background-color: #75b0d3;
+  color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
 }
 

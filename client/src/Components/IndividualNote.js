@@ -32,7 +32,7 @@ export default function IndividualNote(eventEntriesNote) {
   }, [calendarDate, eventEntriesNote])
 
   return (
-    <div id="daily-note-div" className="table-properties mb-4 mx-auto">
+    <div id="daily-note-div" className="table-properties my-3 mx-auto">
       <div className="table-header d-flex align-items-center justify-content-center fst-italic position-relative">
         <h4 className="mb-0">Daily Note:</h4>
         <div className="d-inline position-absolute daily-note-edit cursor-pointer link-light">

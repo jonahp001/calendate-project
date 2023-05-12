@@ -82,12 +82,20 @@ export default function EditNoteView() {
 
   return (
     <>
-      <DayScheduleComponent eventEntries={eventEntries} />
-      <EditNoteComponent eventEntriesNote={eventEntries} onSubmit={addNote} editNote={editNote}/>
-      <div className="d-flex justify-content-center align-items-center pb-3">
-        <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
-          <CalendarIcon />
-        </Link>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <DayScheduleComponent eventEntries={eventEntries} />
+          </div>
+          <div className="col">
+            <EditNoteComponent eventEntriesNote={eventEntries} onSubmit={addNote} editNote={editNote}/>
+          </div>
+          <div className="d-flex justify-content-center align-items-center pb-3">
+            <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
+              <CalendarIcon />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

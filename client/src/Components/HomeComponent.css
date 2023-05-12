@@ -2,7 +2,7 @@
   color: #658BA0;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
-  min-width: 334px;
+  min-width: 250px;
   max-width: 800px;
 }
 
@@ -18,8 +18,17 @@ h3 {
 }
 
 #view-the-day-button {
+  transition: background-color 0.3s ease;
   border: none;
   background-color: #658BA0;
   color: white;
   border-radius: 15px;
+}
+
+#view-the-day-button:hover {
+  background-color: rgb(100, 158, 189);
+}
+
+#view-the-day-button:active {
+  background-color: rgb(101, 139, 160);
 }

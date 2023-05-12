@@ -75,18 +75,26 @@ export default function DetailedDayView() {
 
   return (
     <>
-      <IndividualDay eventEntries={eventEntries} />
-      <IndividualNote eventEntriesNote={eventEntries} />
-      <div className="d-flex justify-content-center align-items-center pb-3">
-        <Link to={`../../${prevDayUrl}`}>
-          <FontAwesomeIcon className="cursor-pointer arrows arrow-left" icon={faCaretLeft} />
-        </Link>
-        <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
-          <CalendarIcon />
-        </Link>
-        <Link to={`../../${nextDayUrl}`}>
-          <FontAwesomeIcon className='cursor-pointer arrows arrow-right' icon={faCaretRight} />
-        </Link>
+    <div className="container">
+        <div className="row">
+          <div className="col">
+            <IndividualDay eventEntries={eventEntries} />
+          </div>
+          <div className="col">
+            <IndividualNote eventEntriesNote={eventEntries} />
+          </div>
+          <div className="d-flex justify-content-center align-items-center pb-3">
+            <Link to={`../../${prevDayUrl}`}>
+              <FontAwesomeIcon className="cursor-pointer arrows arrow-left" icon={faCaretLeft} />
+            </Link>
+            <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
+              <CalendarIcon />
+            </Link>
+            <Link to={`../../${nextDayUrl}`}>
+              <FontAwesomeIcon className='cursor-pointer arrows arrow-right' icon={faCaretRight} />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

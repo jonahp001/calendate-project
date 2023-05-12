@@ -94,7 +94,7 @@ export default function HomeComponent() {
           </div>
         </div>
         <Link to={`year/${year}%2c%20${numericalMonth}/${day}`}>
-          <button id='view-the-day-button' className='mb-5 py-3 px-3 fw-bold shadow' type='button' >View The Day</button>
+          <button id='view-the-day-button' className='mb-5 mb-sm-4 py-3 px-3 fw-bold shadow' type='button' >View The Day</button>
         </Link>
       </div>
     </div>

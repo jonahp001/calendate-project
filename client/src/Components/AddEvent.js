@@ -74,7 +74,7 @@ export default function AddEvent({ onSubmit, eventEntries2 }) {
   }
 
   return (
-    <div id="add-event" className="mx-auto my-4">
+    <div id="add-event" className="mx-auto my-3">
       <h3 className="fw-normal ps-3 d-flex align-items-center">Add Event</h3>
       <form onSubmit={handleSubmit} id="event-form" className="d-flex flex-column justify-content-center align-items-center">
         <textarea required onChange={(e) => setNewEventDescription(e.target.value)} className="my-2" placeholder='Event Description'></textarea>
