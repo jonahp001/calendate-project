@@ -3,30 +3,18 @@
   color: white;
 }
 
-.arrow-left{
-  margin-right: 5rem;
-}
-
-.arrow-right {
-  margin-left: 5rem;
+.bottom-nav-row {
+  gap: 5rem;
 }
 
 @media (min-width:720px) {
-  .arrow-left {
-      margin-right: 6.5rem;
-    }
-
-  .arrow-right {
-    margin-left: 6.5rem;
+  .bottom-nav-row {
+    gap: 6.5rem;
   }
 }
 
 @media (min-width:768px) {
-  .arrow-left {
-    margin-right: 10rem;
-  }
-
-  .arrow-right {
-    margin-left: 10rem;
+  .bottom-nav-row {
+    gap: 10rem;
   }
 }

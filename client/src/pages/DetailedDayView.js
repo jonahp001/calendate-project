@@ -1,6 +1,7 @@
 import IndividualDay from "../Components/IndividualDay";
 import IndividualNote from "../Components/IndividualNote";
 import CalendarIcon from "../Components/CalendarIcon";
+import "./Homepage.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from "react";
@@ -83,11 +84,11 @@ export default function DetailedDayView() {
           <div className="col">
             <IndividualNote eventEntriesNote={eventEntries} />
           </div>
-          <div className="d-flex justify-content-center align-items-center pb-3">
+          <div className="col-12 bottom-nav-row d-flex justify-content-center align-items-center pb-3">
             <Link to={`../../${prevDayUrl}`}>
               <FontAwesomeIcon className="cursor-pointer arrows arrow-left" icon={faCaretLeft} />
             </Link>
-            <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
+            <Link to={`/year/${calendarPath}`} className='my-3'>
               <CalendarIcon />
             </Link>
             <Link to={`../../${nextDayUrl}`}>

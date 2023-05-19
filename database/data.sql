@@ -16,4 +16,5 @@ insert into "users" ("firstName", "lastName", "userName", "hashedPassword", "ema
 
 insert into "entries" ("eventDescription", "startTime", "endTime", "notes", "eventDate", "userId")
   VALUES
-    ('this is a test event description', '5:00 PM', '8:00 PM', 'this is a test note', 'Apr 13, 2023', '1');
+    ('this is a test event description', '5:00 PM', '8:00 PM', '', 'Apr 13, 2023', '1'),
+    ('', '', '', 'this is a test note', 'Apr 13, 2023', '1');

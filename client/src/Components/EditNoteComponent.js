@@ -1,14 +1,16 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import './IndividualDay.css'
 import './EditNoteComponent.css'
 import { useState, useEffect } from "react";
 
 export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote}) {
   const [noteOfDay, setNoteOfDay] = useState('')
+  const [existingNote, setExistingNote] = useState('')
   const [newEventDescription, setNewEventDescription] = useState('')
   const [newStartTime, setNewStartTime] = useState('')
   const [newEndTime, setNewEndTime] = useState('')
   const [newNote, setNewNote] = useState('');
+  const navigate = useNavigate();
 
   const { date, yearAndMonth } = useParams();
   const noComma = yearAndMonth.replace(',', '')
@@ -48,14 +50,17 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote
     editNote(addNewEvent);
   }
 
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
     for (let i = 0; i < eventEntriesNote.length; i++) {
       if (eventEntriesNote[i].notes !== '' && eventEntriesNote[i].eventDate === calendarDate) {
         handleChange();
+        navigate('..');
         return
       }
     }
     handleAdd();
+    navigate('..');
   }
 
   useEffect(() => {
@@ -66,12 +71,13 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote
       }
       if (entriesArray[i].eventDate !== calendarDate || entriesArray[i].notes === undefined) {
         setNoteOfDay('No notes for the day!');
+        setExistingNote('')
       }
       if (entriesArray[i].eventDate === calendarDate) {
         setNoteOfDay(entriesArray[i].notes)
+        setExistingNote(entriesArray[i].notes)
       }
     }
-
   }, [calendarDate, eventEntriesNote])
 
   function NoteFormButton() {
@@ -101,7 +107,7 @@ export default function EditNoteComponent( {eventEntriesNote, onSubmit, editNote
         </div>
       </div>
       <form onSubmit={handleSubmit} className='d-flex flex-column align-items-center justify-content-center'>
-        <textarea onChange={(e) => setNewNote(e.target.value)} className="my-4" placeholder={noteOfDay}></textarea>
+        <textarea onChange={(e) => setNewNote(e.target.value)} className="my-4" placeholder={noteOfDay} defaultValue={existingNote}></textarea>
         <NoteFormButton />
       </form>
     </div>

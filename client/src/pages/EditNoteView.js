@@ -32,8 +32,6 @@ export default function EditNoteView() {
     }
   }
 
-  console.log(eventEntries)
-
   async function editNote(editNote, entryId) {
     for (let i = 0; i < eventEntries.length; i++) {
       if (currentDate === eventEntries[i].eventDate) {
@@ -43,8 +41,8 @@ export default function EditNoteView() {
     try {
       const res = await fetch((`/api/entries/1/${entryId}`), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editNote) })
       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-      const addedNote = await res.json()
-      console.log(addedNote)
+      // const addedNote = await res.json()
+      // console.log(addedNote)
     }
     catch (err) {
       console.error(err)
