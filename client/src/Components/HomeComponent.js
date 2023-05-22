@@ -80,7 +80,7 @@ export default function HomeComponent() {
   return (
     <div className='container'>
       <div className='day-content shadow text-center mx-2 mx-sm-4 my-4 px-0'>
-        <div className='justify-content-center'>
+        <div className='justify-content-center homepage-events-notes'>
           <h3 className='py-2'>{dayOfTheWeek} {`${numericalMonth}/${day}/${year}`}</h3>
           <div className='row'>
             <div className='col-sm text-height my-4 px-0 mx-2'>

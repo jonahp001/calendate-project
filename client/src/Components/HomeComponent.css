@@ -33,3 +33,7 @@ h3 {
 #view-the-day-button:active {
   background-color: rgb(101, 139, 160);
 }
+
+.homepage-events-notes {
+  min-height: 280px;
+}
