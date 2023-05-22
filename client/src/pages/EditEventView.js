@@ -57,7 +57,7 @@ export default function EditEventView() {
           <div className="col">
             <AddEvent eventEntries2={eventEntries} onSubmit={addEventAndTimes} />
           </div>
-          <div className='pb-4'>
+          <div className="d-flex justify-content-center align-items-center pb-4">
             <Link to={`/year/${calendarPath}`} className='d-flex justify-content-center my-3'>
               <CalendarIcon />
             </Link>
