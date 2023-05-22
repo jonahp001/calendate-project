@@ -100,6 +100,7 @@ app.patch('/api/entries/:userId/:entryId', async (req, res) => {
   }
 });
 
+app.get('*', (req, res) => res.sendFile(`${reactStaticDir}/index.html`));
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {
