@@ -24,8 +24,6 @@ export default function EditNoteView() {
     try {
       const res = await fetch(('/api/entries/1'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(addNewNote) })
       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-      const addedNote = await res.json()
-      console.log(addedNote)
     }
     catch (err) {
       console.error(err)
@@ -34,15 +32,13 @@ export default function EditNoteView() {
 
   async function editNote(editNote, entryId) {
     for (let i = 0; i < eventEntries.length; i++) {
-      if (currentDate === eventEntries[i].eventDate) {
+      if (currentDate === eventEntries[i].eventDate && eventEntries[i].notes) {
         entryId = eventEntries[i].entryId;
       }
     }
     try {
       const res = await fetch((`/api/entries/1/${entryId}`), { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(editNote) })
       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-      // const addedNote = await res.json()
-      // console.log(addedNote)
     }
     catch (err) {
       console.error(err)

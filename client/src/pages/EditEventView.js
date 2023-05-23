@@ -13,8 +13,6 @@ export default function EditEventView() {
     try {
       const res = await fetch(('/api/entries/1'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(addNewEvent) })
       if (!res.ok) throw new Error(`fetch Error ${res.status}`)
-      const addedEvent = await res.json()
-      console.log(addedEvent)
     }
     catch (err) {
       console.error(err)
