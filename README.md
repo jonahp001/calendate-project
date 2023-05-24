@@ -2,7 +2,7 @@
 
 ## A fullstack web application utilizing React.js, Node.js PostgreSQL, and Express where users can view a calendar and add events for any given day.
 
-[A link to a deployment of the web app hosted via Microsoft Azure](https://github.com/jonahp001/final-project)
+[A link to a deployment of the web app hosted via Microsoft Azure](https://github.com/jonahp001/calendate-project)
 
 ![Test functionality of app](https://s12.gifyu.com/images/Kapture-2023-05-23-at-15.27.41.gif "gif of app functionality")
 
